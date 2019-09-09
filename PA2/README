@@ -1,0 +1,18 @@
+I have finished the basic 100 points part and the first part(Congestion control) of Bonus points.
+I used many different types of files like pdf, jpg, html and so on. All of them can be transmitted successfully.
+
+
+For basic part:
+
+I read an input file first and then split the input file into appropriately sized chunks of data.
+If not reaching the end of the window, then we send the packet to receiver.
+If timeout happens, retransmit the oldest unacknowledged packet.
+Upon the receipt of three duplicate acks, we transmit the corresponding packet without waiting for timeout.
+
+
+For bonus part:
+
+I followed the TCP congestion control mechanism in Slide Transport-5.
+There are two cases: loss indicated by timeout and 3 duplicate acks.
+I choose to use the mechanism similar to RENO
+

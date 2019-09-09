@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jquery展开、收缩</title>
+<script type="text/javascript" src="http://www.codefans.net/ajaxjs/jquery-1.6.2.min.js"></script>
+</head>
+<script type="text/javascript">
+// 收缩展开效果
+$(document).ready(function(){
+   $(".box h2").toggle(function(){
+    $(this).next(".text").animate({height: 'toggle', opacity: 'toggle'}, "slow");
+   },function(){
+    $(this).next(".text").animate({height: 'toggle', opacity: 'toggle'});
+   });
+});
+</script>
+<body>
+<div class="box">
+    <h2>menu1</h2>
+    <div class="text" style="display:none">1111111111</div>
+    </div>
+</div>
+<div class="box">
+    <h2>menu2</h2>
+    <div class="text" style="display:none">>222222222</div>
+    </div>
+</div>
+<div class="box">
+    <h2>menu3</h2>
+    <div class="text" style="display:none">33333333333</div>
+    </div>
+</div>
+</body>
+</html>
