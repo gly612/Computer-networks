@@ -1,0 +1,34 @@
+The IP address is localhost
+The port number is 8888
+
+I did both the bonus parts, which are explained in the related step.
+
+Step 1:
+
+First I change the structure of the skeleton code. I change it into 2 functions:
+one main function and one proxy function. Also, the proxy in the skeleton code
+throws away many useful headers in the client request. For example, I handle the
+"Referer" tag in the header. if there is 'Referer' tag in http request, it means
+the browser is requiring files, so we distinguish this situation with requiring a
+web page. Of course the requests for the two scenarios are also different. Meanwhile,
+I put all the cache files for one requested web page in a directory, which I think is
+also an improvement of the skeleton code.
+
+Step 2:
+
+After I read the response into buffer, I will check if the buffer is empty or not. If it
+is empty, I will not cache the empty buffer and instead returns 404 not found to the client.
+By doing this, we can ensure that 400 responses we get from the server is properly forwarded
+to the browse and future requests for that object do not receive an empty file
+
+Step 3:
+
+First I will check whether there is "Last-Modified" variable in the cache file. If there is,
+I will get the last modified time and store it in a string and send a "If-Modified-Since" GET
+request. If the response is "304", it means that the version of the cache is not changed so we
+direct send the cache back. If the response is "200", it means that the version of cache has
+been modified, so we update the cache and send the new cache back.
+
+Step 4:
+
+I import the thread module and use thread.start_new_thread() function to create a thread

@@ -1,0 +1,15 @@
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Tue, 05 Mar 2019 16:20:54 GMT
+Content-Type: text/html
+Content-Length: 154
+Connection: close
+Location: http://localhost/Sites/CQUmain/Themes/Default/Images/link-bg2.png
+
+<html>
+<head><title>302 Found</title></head>
+<body bgcolor="white">
+<center><h1>302 Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
